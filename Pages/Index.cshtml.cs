@@ -30,9 +30,8 @@ namespace FizzBuzzNET.Pages
         {
             if (ModelState.IsValid)
             {
-                int temp; Boolean dalej;
-                dalej = Int32.TryParse(FizzBuzzResult.NumberStr, out temp);
-                if(dalej==true)
+                int temp;
+                if(Int32.TryParse(FizzBuzzResult.NumberStr, out temp))
                 {
                     FizzBuzzResult.Number = temp;
                     if (FizzBuzzResult.Number >= 1 && FizzBuzzResult.Number <= 1000)
