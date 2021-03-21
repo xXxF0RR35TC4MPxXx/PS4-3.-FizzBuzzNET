@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome User</h1>
+    <form method="post">
+        <div class="form-row align-items-center" style="margin-top:50px; margin-left:auto; margin-right:auto;">
+            <div class="col-auto" style="margin:auto">
+                <label asp-for="FizzBuzzResult.Number"></label><br />
+                <b><span asp-validation-for="FizzBuzzResult.Number" class="text-danger"></span><br /></b>
+                <input asp-for="FizzBuzzResult.Number" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" style="margin-top:55px">Zatwierdź</button>
+    </form>
+
+    @if (Model.FizzBuzzResult != null)
+    {
+        <br /><br />
+        @if (Model.FizzBuzzResult.Wynik == "None")
+        {
+            <p>Liczba @Model.FizzBuzzResult.Number nie spełnia kryterium Fizz/Buzz </p>
+        }
+        else if (!String.IsNullOrEmpty(Model.FizzBuzzResult.Wynik))
+        {
+            <p>Otrzymano: @Model.FizzBuzzResult.Wynik</p>
+        }
+    }
+</div>

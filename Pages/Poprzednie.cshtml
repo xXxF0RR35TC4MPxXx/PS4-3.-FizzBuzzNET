@@ -1,0 +1,12 @@
+﻿@page
+@model FizzBuzzNET.Pages.PoprzednieModel
+@{
+
+    <p><b>Dane zapisane w sesji:</b></p>
+    @if (Model.FizzBuzzResult != null)
+    {
+        <p><b>@Html.DisplayNameFor(model => Model.FizzBuzzResult.Number):</b> @Model.FizzBuzzResult.Number </p>
+        <p><b>@Html.DisplayNameFor(model => Model.FizzBuzzResult.Wynik):</b> @Model.FizzBuzzResult.Wynik </p>
+        <p><b>@Html.DisplayNameFor(model => Model.FizzBuzzResult.Czas):</b> @Model.FizzBuzzResult.Czas </p>
+    }
+}
