@@ -1,8 +1,11 @@
 ﻿@page
 @model FizzBuzzNET.Pages.PoprzednieModel
 @{
+    ViewData["Title"] = "Poprzednio wyszukiwane";
+}
+@{
 
-    <p><b>Dane zapisane w sesji:</b></p>
+    <p><b>Ostatnio wyszukiwane:</b></p>
     @if (Model.FizzBuzzResult != null)
     {
         <p><b>@Html.DisplayNameFor(model => Model.FizzBuzzResult.Number):</b> @Model.FizzBuzzResult.Number </p>
