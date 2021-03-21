@@ -10,8 +10,6 @@ namespace FizzBuzzNET.Pages.Forms
     {
         [Display(Name = "Podaj liczbę")]
         public String NumberStr { get; set; }
-
-        //[Range(1, 1000, ErrorMessage = "Podana liczba musi należeć do przedziału 1-1000!")]
         public int Number { get; set; }
         public String Wynik { get; set; }
         public DateTime Czas { get; set; }
