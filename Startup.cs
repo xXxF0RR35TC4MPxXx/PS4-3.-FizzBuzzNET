@@ -1,6 +1,8 @@
+using FizzBuzzNET.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +28,10 @@ namespace FizzBuzzNET
             services.AddRazorPages();
             services.AddMemoryCache();
             //services.AddDistributedMemoryCache();
+            services.AddDbContext<FBContext>(options => 
+            { 
+                options.UseSqlServer(Configuration.GetConnectionString("FizzBuzzDB")); 
+            });
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(50);
